@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Header styling */
@@ -25,10 +26,19 @@ header {
     font-weight: bold;
     text-align: center;
     width: 100%;
+    position: fixed; /* Keeps it visible when scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation styling */
+/* Push content down so it doesn't hide behind header */
+main {
+    margin-top: 80px;
+}
+
+/* Navigation bar */
 nav {
     display: flex;
     justify-content: center;
@@ -55,38 +65,36 @@ nav button:hover {
     background-color: #C70039;
 }
 
-/* Main content container */
+/* Main content box */
 main {
     width: 85%;
-    max-width: 1200px; /* Expanded for a professional layout */
-    margin: 40px auto;
+    max-width: 1200px;
     padding: 40px;
     background: white;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
+    opacity: 0; /* Hidden until scrolled */
+    transform: translateY(50px); /* Starts lower */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Page transitions */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Reveal content when in view */
+main.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Hide sections by default */
-.page {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
+/* Scroll animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Show active section */
-.page.active {
-    display: block;
+/* Make elements visible when scrolled */
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Section headings */
@@ -94,12 +102,14 @@ h1 {
     font-size: 32px;
     color: #001F5B;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 h2 {
     font-size: 26px;
     color: #001F5B;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 h3 {
@@ -108,7 +118,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* General text styling */
+/* Paragraph text */
 p {
     font-size: 18px;
     line-height: 1.6;
@@ -126,15 +136,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Image Styling */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-    border-radius: 8px;
-}
-
 /* Quiz Container */
 .quiz-container {
     text-align: left;
@@ -145,9 +146,18 @@ img {
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-/* Quiz question styling */
+/* Quiz becomes visible on scroll */
+.quiz-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Quiz questions */
 .quiz-container h3 {
     font-size: 20px;
     margin-bottom: 15px;
@@ -170,7 +180,7 @@ img {
     }
 }
 
-/* Quiz radio button styling */
+/* Quiz radio buttons */
 .quiz-container label {
     display: flex;
     align-items: center;
