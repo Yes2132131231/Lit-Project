@@ -11,34 +11,33 @@ body {
     background-color: #f4f4f4; /* Solid background */
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Smaller Solid Top Navbar */
+/* Solid Sidebar Navbar */
 nav {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 8px 10px; /* Reduced padding for a smaller navbar */
-    width: 100%;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+    padding: 20px;
+    width: 200px; /* Sidebar width */
     background: #001F5B; /* Solid Chicago Blue */
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; /* Change to 'right: 0;' for a right sidebar */
+    height: 100vh; /* Full height */
     z-index: 1000;
-    height: 50px; /* Smaller height */
 }
 
-/* Navigation Buttons - Adjusted Size */
+/* Navigation Buttons - Adjusted for Sidebar */
 nav button {
     background-color: white;
     color: #001F5B;
     border: 2px solid #001F5B;
-    padding: 6px 12px; /* Smaller buttons */
-    font-size: 14px; /* Slightly smaller text */
+    padding: 10px;
+    font-size: 16px;
     border-radius: 5px;
     font-weight: bold;
+    width: 100%;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -48,20 +47,21 @@ nav button:hover {
     color: white;
 }
 
-/* Header Styling - Solid */
+/* Header Styling - Matches Sidebar */
 header {
     background-color: #001F5B; /* Solid Chicago Blue */
     color: white;
     padding: 20px;
     text-align: center;
-    width: 100%;
-    position: fixed; /* Keeps title visible */
+    width: calc(100% - 200px); /* Adjust width to not overlap sidebar */
+    margin-left: 200px; /* Shift to the right */
+    position: fixed;
     top: 0;
-    left: 0;
+    left: 200px;
     z-index: 999;
 }
 
-/* H1 Styling - Matches Navbar */
+/* H1 Styling - Matches Sidebar */
 h1 {
     font-size: 32px;
     color: white;
@@ -69,14 +69,13 @@ h1 {
     padding: 20px;
     text-align: center;
     width: 100%;
-    margin-top: 60px; /* Prevents overlap */
 }
 
-/* Main Content - Solid */
+/* Main Content - Adjusted for Sidebar */
 main {
-    width: 85%;
+    margin-left: 220px; /* Shift right to not overlap sidebar */
+    width: calc(100% - 220px);
     max-width: 1200px;
-    margin: 100px auto;
     padding: 40px;
     background: white;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -209,27 +208,33 @@ img {
     transition: background 0.3s ease-in-out;
 }
 
-quiz-container button:hover {
+.quiz-container button:hover {
     background-color: #C70039;
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     main {
-        width: 95%;
+        margin-left: 0; /* Reset for smaller screens */
+        width: 100%;
         padding: 30px;
     }
     
     nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav button {
-        width: 80%;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
     }
 
-    .quiz-container {
+    nav button {
+        width: auto;
+    }
+
+    header {
+        margin-left: 0;
         width: 100%;
+        left: 0;
     }
 }
