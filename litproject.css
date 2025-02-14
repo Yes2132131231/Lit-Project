@@ -58,7 +58,7 @@ nav button:hover {
 /* Main content container */
 main {
     width: 85%;
-    max-width: 1200px; /* Expanded for a professional layout */
+    max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
     background: white;
@@ -66,45 +66,27 @@ main {
     border-radius: 12px;
 }
 
-/* Page transitions */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hide sections by default */
-.page {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Show active section */
-.page.active {
-    display: block;
-}
-
-/* Section headings */
+/* H1 Styling - Big Clearish Box */
 h1 {
     font-size: 32px;
-    color: #001F5B;
-    margin-bottom: 20px;
+    color: white;
+    background: rgba(0, 31, 91, 0.7); /* Chicago Blue with transparency */
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
 }
 
+/* H2 and H3 Chicago Blue */
 h2 {
     font-size: 26px;
-    color: #001F5B;
+    color: #001F5B; /* Chicago Blue */
     margin-bottom: 15px;
 }
 
 h3 {
     font-size: 22px;
-    color: #444;
+    color: #001F5B; /* Chicago Blue */
     margin-bottom: 10px;
 }
 
