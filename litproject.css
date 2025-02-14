@@ -16,38 +16,37 @@ body {
 }
 
 /* Solid but Slightly Transparent Navbar */
+/* Smaller Top Navbar */
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px;
+    padding: 8px 10px; /* Reduced padding for a smaller navbar */
     width: 100%;
-    background: rgba(0, 31, 91, 0.85); /* Solid Chicago Blue with slight transparency */
-    backdrop-filter: blur(5px); /* Smoothens background */
-    position: fixed; /* Keeps it on top */
+    background: #001F5B; /* Solid Chicago Blue */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    height: 50px; /* Smaller height */
 }
 
-/* Navigation Buttons */
+/* Navigation buttons - Adjusted size */
 nav button {
-    background-color: rgba(255, 255, 255, 0.2); /* Slight transparency */
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
+    background-color: white;
+    color: #001F5B;
+    border: 2px solid #001F5B;
+    padding: 6px 12px; /* Smaller buttons */
+    font-size: 14px; /* Slightly smaller text */
+    border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Red Hover Effect */
 nav button:hover {
-    background-color: #C70039; /* Chicago Red */
+    background-color: #C70039;
     color: white;
-    border: 2px solid white;
 }
 
 /* Header Styling - Matches Navbar */
