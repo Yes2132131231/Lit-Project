@@ -1,55 +1,78 @@
 // All of this code was mostly made by Aditya Pulla 👍 
 
-const pages = document.querySelectorAll('.page');
+const pages = document.querySelectorAll('.page')
 
-function showPage(pageId) {
-    for (let i = 0; i < pages.length; i++) {
-        if (pages[i].id == pageId) {
+function showPage(pageId)
+{
+    for( let i = 0; i < pages.length; i++)
+    {
+        if( pages[i].id == pageId)
+        {  
             pages[i].style.display = 'block';
             pages[i].style.opacity = "0";
             pages[i].style.position = "relative";
             pages[i].style.bottom = "-200px";
-            pages[i].style.transform = "translateY(50px)"; // Starts lower for scroll effect
-        } else { 
+        }
+        else
+        { 
             // ✅ Reset quiz only when leaving the Quiz page
-            if (pages[i].id == "Quiz") {
+            if(pages[i].id == "Quiz")
+            {
                 resetQuiz();
             }
             pages[i].style.display = 'none';
         }
     }   
-    setTimeout(() => animatethis(pageId), 10); // Increased delay to allow styles to apply properly
+    setTimeout(() => animatethis(pageId), 4)
 }
 showPage("titleScreen");
 
-function animatethis(pageId) {
+function animatethis(pageId)
+{
     let activePage = document.getElementById(pageId);
 
-    if (activePage) {
-        activePage.style.transition = "opacity 0.5s ease-in-out, bottom 0.5s ease-in-out, transform 0.5s ease-in-out";
+    if (activePage) 
+    {
+        activePage.style.transition = "opacity 0.5s ease-in-out, bottom 0.5s ease-in-out";
         activePage.style.opacity = "1"; 
         activePage.style.bottom = "0px";
-        activePage.style.transform = "translateY(0)"; // Smoothly slides into place
     }
 }
 
-// Scroll animation for elements appearing when scrolling
-document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".scroll-reveal");
+function resetQuiz()
+{
+        let answers = document.querySelectorAll('.answer'); // Select all radio buttons
+        answers.forEach(answer => answer.checked = false); // Uncheck all
+        document.getElementById("quizResult").innerText = ""; // Clear result text
+}
 
-    function revealOnScroll() {
-        elements.forEach((el) => {
-            const position = el.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (position < windowHeight - 100) {
-                el.style.opacity = "1";
-                el.style.transform = "translateY(0)";
-                el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-            }
-        });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll(); // Run once in case elements are already in view
-});
+function checkQuizAnswers()
+{
+        let answer1 = document.getElementById("B1");
+        let answer2 = document.getElementById('C2');
+        let answer3 = document.getElementById('B3');
+        let answer4 = document.getElementById('D4');
+        let answer5 = document.getElementById('A5');
+        let score = 0; 
+        if(answer1.checked)
+        {
+                score++
+        }
+        if(answer2.checked)
+        {
+                score++
+        }
+        if(answer3.checked)
+        {
+                score++
+        }
+        if(answer4.checked)
+        {
+                score++
+        }
+        if(answer5.checked)
+        {
+                score++
+        }
+        document.getElementById("quizResult").innerText = `You got ${score}/5 correct!`
+}
