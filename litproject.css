@@ -11,48 +11,40 @@ body {
     background-color: #f4f4f4;
     color: #C70039; /* Chicago Red */
     text-align: center;
-    padding: 20px;
     background-image: url("backgroundimage.webp");
+    background-size: cover;
+    background-position: center;
     font-weight: bold;
-}
-
-@keyframes appear {
-    0%{
-        opacity: 0;
-        bottom: -200px;
-    }
-    100%{
-        opacity: 1;
-        bottom: 0;
-    }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header styling */
 header {
     background-color: #444;
     color: white;
-    padding: 20px 0;
+    padding: 25px;
+    font-size: 24px;
     font-weight: bold;
-}
-
-h1 {
-    margin-bottom: 10px;
-    font-weight: bold;
+    width: 100%;
 }
 
 /* Navigation buttons */
 nav {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 nav button {
     background-color: white;
     color: #444;
     border: 2px solid #444;
-    padding: 10px 15px;
-    margin: 5px;
+    padding: 12px 18px;
+    font-size: 18px;
     cursor: pointer;
-    font-size: 16px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     font-weight: bold;
@@ -65,15 +57,28 @@ nav button:hover {
 
 /* Main content sections */
 main {
-    max-width: 800px;
+    max-width: 1000px;
+    width: 90%;
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
     animation: appear 0.5s ease-in-out;
     color: #C70039; /* Chicago Red */
     font-weight: bold;
+}
+
+/* Smooth appearance animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hide all sections by default */
@@ -87,15 +92,22 @@ main {
 }
 
 /* Section headings */
-h2 {
-    margin-bottom: 10px;
-    color: #001F5B; /* Chicago Blue */
+h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
     font-weight: bold;
 }
 
-/* Subheadings */
+h2 {
+    margin-bottom: 15px;
+    color: #001F5B; /* Chicago Blue */
+    font-size: 24px;
+    font-weight: bold;
+}
+
 h3 {
     color: #001F5B; /* Chicago Blue */
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -111,54 +123,47 @@ a:hover {
 }
 
 /* Image styling */
-.welcomeImage {
-    width: 750px;
-    display: block;
-    margin: auto;
-}
-
+.welcomeImage,
 #redlining {
-    width: 750px;
+    max-width: 100%;
     display: block;
-    margin:auto;
+    margin: auto;
+    border-radius: 8px;
 }
 
 /* Quiz Container */
 .quiz-container {
     text-align: left;
     margin-top: 20px;
-    max-width: 700px; /* Adjust width as needed */
+    max-width: 800px;
+    width: 100%;
     margin: auto;
-}
-
-/* Quiz Container */
-.quiz-container {
-    text-align: left;
-    margin-top: 20px;
-    max-width: 700px; /* Adjust width */
-    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style questions */
 .quiz-container h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 15px;
+    font-size: 20px;
     color: #001F5B; /* Chicago Blue */
 }
 
-/* Ensure radio buttons align in rows */
+/* Align radio buttons neatly */
 .quiz-container .options {
     display: flex;
-    flex-direction: column; /* Default for mobile */
-    gap: 5px; /* Space between options */
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* For desktop: Align answers in rows */
-@media screen and (min-width: 600px) {
+/* For larger screens: Align answers in rows */
+@media screen and (min-width: 768px) {
     .quiz-container .options {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-        gap: 10px 20px; /* Space between answers */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 20px;
     }
 }
 
@@ -166,30 +171,47 @@ a:hover {
 .quiz-container label {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between radio button and text */
-    font-size: 16px;
+    gap: 10px;
+    font-size: 18px;
     cursor: pointer;
 }
 
-/* Make radio buttons slightly larger */
+/* Increase radio button size */
 .quiz-container input[type="radio"] {
-    transform: scale(1.2); /* Makes radio buttons larger */
-    margin-right: 5px;
+    transform: scale(1.3);
+    margin-right: 8px;
 }
 
 /* Submit Button Styling */
 .quiz-container button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    font-size: 16px;
+    margin-top: 20px;
+    padding: 12px 18px;
+    font-size: 18px;
     font-weight: bold;
     background-color: #001F5B; /* Chicago Blue */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 .quiz-container button:hover {
     background-color: #C70039; /* Chicago Red */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav button {
+        width: 80%;
+    }
+    
+    main {
+        padding: 30px;
+    }
 }
