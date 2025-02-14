@@ -1,5 +1,6 @@
 // all of dis was code was made mostly by Aditya Pulla :thumbs up:// 
 const pages = document.querySelectorAll('.page')
+
 function showPage(pageId)
 {
     for( let i = 0; i < pages.length; i++)
@@ -13,10 +14,13 @@ function showPage(pageId)
         }
         else
         { 
+            // ✅ Reset quiz only when leaving the Quiz page
+            if(pages[i].id == "Quiz")
+            {
+                resetQuiz();
+            }
             pages[i].style.display = 'none';
         }
-        
-        
     }   
     setTimeout(() => animatethis(pageId), 4)
 }
@@ -32,5 +36,42 @@ function animatethis(pageId)
         activePage.style.opacity = "1"; 
         activePage.style.bottom = "0px";
     }
+}
 
+function resetQuiz()
+{
+        let answers = document.querySelectorAll('.answer'); // Select all radio buttons
+        answers.forEach(answer => answer.checked = false); // Uncheck all
+        document.getElementById("quizResult").innerText = ""; // Clear result text
+}
+
+function checkQuizAnswers()
+{
+        let answer1 = document.getElementById("B1");
+        let answer2 = document.getElementById('C2');
+        let answer3 = document.getElementById('B3');
+        let answer4 = document.getElementById('D4');
+        let answer5 = document.getElementById('A5');
+        let score = 0; 
+        if(answer1.checked)
+        {
+                score++
+        }
+        if(answer2.checked)
+        {
+                score++
+        }
+        if(answer3.checked)
+        {
+                score++
+        }
+        if(answer4.checked)
+        {
+                score++
+        }
+        if(answer5.checked)
+        {
+                score++
+        }
+        document.getElementById("quizResult").innerText = `You got ${score}/5 correct!`
 }
