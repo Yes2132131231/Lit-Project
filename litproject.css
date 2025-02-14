@@ -5,18 +5,17 @@
     box-sizing: border-box;
 }
 
-/* Body Styling - Slight Transparency */
+/* Body Styling - Solid */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: rgba(244, 244, 244, 0.9); /* Slight transparency */
+    background-color: #f4f4f4; /* Solid background */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Solid but Slightly Transparent Navbar */
-/* Smaller Top Navbar */
+/* Smaller Solid Top Navbar */
 nav {
     display: flex;
     justify-content: center;
@@ -31,7 +30,7 @@ nav {
     height: 50px; /* Smaller height */
 }
 
-/* Navigation buttons - Adjusted size */
+/* Navigation Buttons - Adjusted Size */
 nav button {
     background-color: white;
     color: #001F5B;
@@ -45,13 +44,13 @@ nav button {
 
 /* Red Hover Effect */
 nav button:hover {
-    background-color: #C70039;
+    background-color: #C70039; /* Chicago Red */
     color: white;
 }
 
-/* Header Styling - Matches Navbar */
+/* Header Styling - Solid */
 header {
-    background-color: rgba(0, 31, 91, 0.85); /* Slight transparency */
+    background-color: #001F5B; /* Solid Chicago Blue */
     color: white;
     padding: 20px;
     text-align: center;
@@ -66,20 +65,20 @@ header {
 h1 {
     font-size: 32px;
     color: white;
-    background-color: rgba(0, 31, 91, 0.85); /* Slight transparency */
+    background-color: #001F5B; /* Matches navbar */
     padding: 20px;
     text-align: center;
     width: 100%;
     margin-top: 60px; /* Prevents overlap */
 }
 
-/* Main Content - Slight Transparency */
+/* Main Content - Solid */
 main {
     width: 85%;
     max-width: 1200px;
     margin: 100px auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    background: white;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
 }
@@ -147,14 +146,14 @@ img {
     border-radius: 8px;
 }
 
-/* Quiz Container - Slight Transparency */
+/* Quiz Container - Solid */
 .quiz-container {
     text-align: left;
     margin-top: 20px;
     width: 100%;
     max-width: 900px;
     padding: 30px;
-    background: rgba(249, 249, 249, 0.95); /* Soft transparency */
+    background: white;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -210,7 +209,7 @@ img {
     transition: background 0.3s ease-in-out;
 }
 
-.quiz-container button:hover {
+quiz-container button:hover {
     background-color: #C70039;
 }
 
