@@ -10,6 +10,7 @@
             <button onclick = "showPage('titleScreen')"> Home</button>
             <button onclick = "showPage('housingIssues')"> History Of Chicago's Segregation </button>
             <button onclick = "showPage('Play')"> Modern Day Housing Issues</button>
+            <button onclick ="showPage('Quiz')"> Quiz</button>
             <button onclick = "showPage('citations')"> Resources </button>
         </nav> 
     </header>
@@ -84,6 +85,52 @@
                 Black homebuyers also face slightly higher interest rates. While progress has been made in closing the gap between housing prices in different areas of Chicago, challenges still remain in ensuring equal access to homeownership opportunities 
                 and financial resources for all communities.
             </p>
+        </section>
+        <section id="Quiz" class=" page">
+        <div class="quiz-container">
+            <h3> 1. How did redlining impact Black families in Chicago? </h3>
+            <div class="options">
+                <label><input type="radio" name="q1" id="A1" class="answer"> A) It helped them secure better housing loans</label>
+                <label><input type="radio" name="q1" id="B1" class="answer"> B) It restricted them from accessing homeownership in certain areas</label>
+                <label><input type="radio" name="q1" id="C1" class="answer"> C) It provided financial support for Black homeowners</label>
+                <label><input type="radio" name="q1" id="D1" class="answer"> D) It encouraged racial integration in the housing market</label>
+            </div>
+        
+            <h3> 2. What trend has been observed in Englewood home prices in recent years? </h3>
+            <div class="options">
+                <label><input type="radio" name="q2" id="A2" class="answer"> A) They have stayed the same</label>
+                <label><input type="radio" name="q2" id="B2" class="answer"> B) They have dropped significantly</label>
+                <label><input type="radio" name="q2" id="C2" class="answer"> C) They have increased by 42.7% in the last year</label>
+                <label><input type="radio" name="q2" id="D2" class="answer"> D) They have become equal to Lincoln Park prices</label>
+            </div>
+        
+            <h3> 3. What is the main difference between home prices in Lincoln Park and Englewood? </h3>
+            <div class="options">
+                <label><input type="radio" name="q3" id="A3" class="answer"> A) Englewood has lower home prices, but its residents earn more</label>
+                <label><input type="radio" name="q3" id="B3" class="answer"> B) Lincoln Park has significantly higher home prices and incomes</label>
+                <label><input type="radio" name="q3" id="C3" class="answer"> C) Both areas have nearly equal home values</label>
+                <label><input type="radio" name="q3" id="D3" class="answer"> D) Lincoln Park has seen the most rapid increase in home prices</label>
+            </div>
+        
+            <h3> 4. Despite some progress in housing, what issue still affects Black homebuyers in Chicago? </h3>
+            <div class="options">
+                <label><input type="radio" name="q4" id="A4" class="answer"> A) Lack of available homes</label>
+                <label><input type="radio" name="q4" id="B4" class="answer"> B) Free financial aid programs</label>
+                <label><input type="radio" name="q4" id="C4" class="answer"> C) Easier access to loans than white buyers</label>
+                <label><input type="radio" name="q4" id="D4" class="answer"> D) Higher mortgage denial rates and interest rates</label>
+            </div>
+        
+            <h3> 5. What does the interactive map on this website show? </h3>
+            <div class="options">
+                <label><input type="radio" name="q5" id="A5" class="answer"> A) Racial segregation and historical redlining effects</label>
+                <label><input type="radio" name="q5" id="B5" class="answer"> B) Population density in Chicago</label>
+                <label><input type="radio" name="q5" id="C5" class="answer"> C) The wealthiest neighborhoods in Chicago</label>
+                <label><input type="radio" name="q5" id="D5" class="answer"> D) Areas with the newest housing developments</label>
+            </div>
+        
+            <button onclick="checkQuizAnswers()">Submit Quiz</button>
+            <p id="quizResult"></p>
+        </div>
         </section>
         <section id = "citations" class = "page"> 
             <h2> Resources </h2>
