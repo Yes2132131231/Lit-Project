@@ -5,42 +5,41 @@
     box-sizing: border-box;
 }
 
-/* Body Styling - Solid */
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Solid background */
+    background-color: #f4f4f4;
     color: #C70039; /* Chicago Red */
     text-align: center;
     padding: 20px;
     font-weight: bold;
 }
 
-/* Solid Sidebar Navbar (Aligned to the Top and Left) */
+/* SOLID BLUE NAVBAR AT THE TOP */
 nav {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
+    justify-content: center;
     gap: 10px;
     padding: 10px;
-    width: 180px; /* Sidebar width */
+    width: 100%;
     background: #001F5B; /* Solid Chicago Blue */
     position: fixed;
-    top: 0; /* Ensures it touches the top */
-    left: 0; /* Aligns it to the left */
-    height: 100vh; /* Full height */
+    top: 0;
+    left: 0;
     z-index: 1000;
-    align-items: center; /* Center buttons */
+    height: 60px; /* EXACT SIZE FROM YOUR CSS */
+    align-items: center;
 }
 
-/* Navigation Buttons */
+/* Navigation buttons */
 nav button {
     background-color: white;
     color: #001F5B;
     border: 2px solid #001F5B;
-    padding: 10px;
+    padding: 8px 12px; /* Keep button size from your CSS */
     font-size: 16px;
     border-radius: 5px;
     font-weight: bold;
-    width: 80%;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -50,77 +49,61 @@ nav button:hover {
     color: white;
 }
 
-/* Header Styling - Matches Sidebar */
+/* SOLID BLUE HEADER UNDER NAVBAR */
 header {
     background-color: #001F5B; /* Solid Chicago Blue */
     color: white;
-    padding: 20px;
-    text-align: center;
-    width: calc(100% - 180px); /* Adjust width to not overlap sidebar */
-    margin-left: 180px; /* Shift to the right */
-    position: fixed;
-    top: 0;
-    left: 180px;
-    z-index: 999;
+    padding: 20px 0;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 60px; /* Pushes content below navbar */
 }
 
-/* H1 Styling - Matches Sidebar */
+/* H1 Styling - EXACTLY LIKE YOURS */
 h1 {
+    margin-bottom: 10px;
+    font-weight: bold;
     font-size: 32px;
     color: white;
-    background-color: #001F5B; /* Matches navbar */
-    padding: 20px;
-    text-align: center;
-    width: 100%;
 }
 
-/* Main Content - Adjusted for Sidebar */
+/* Main content sections */
 main {
-    margin-left: 200px; /* Shift right to not overlap sidebar */
-    width: calc(100% - 200px);
-    max-width: 1200px;
-    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
     background: white;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    animation: appear 0.5s ease-in-out;
+    color: #C70039; /* Chicago Red */
+    font-weight: bold;
 }
 
-/* Page Transitions */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hide Sections by Default */
+/* Hide all sections by default */
 .page {
     display: none;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Show Active Section */
+/* Show only the active section */
 .page.active {
     display: block;
 }
 
-/* H2 and H3 Chicago Blue */
+/* Section headings */
 h2 {
     margin-bottom: 10px;
     color: #001F5B; /* Chicago Blue */
     font-weight: bold;
 }
 
+/* Subheadings */
 h3 {
     color: #001F5B; /* Chicago Blue */
     font-weight: bold;
 }
 
-/* Links in the Resources Section */
+/* Links in the resources section */
 a {
     color: #0000EE; /* Hypertext Blue */
     text-decoration: none;
@@ -131,7 +114,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Image Styling */
+/* Image styling */
 .welcomeImage {
     width: 750px;
     display: block;
@@ -152,21 +135,21 @@ a:hover {
     margin: auto;
 }
 
-/* Style Questions */
+/* Style questions */
 .quiz-container h3 {
     margin-bottom: 10px;
     font-size: 18px;
     color: #001F5B; /* Chicago Blue */
 }
 
-/* Ensure Radio Buttons Align in Rows */
+/* Ensure radio buttons align in rows */
 .quiz-container .options {
     display: flex;
     flex-direction: column; /* Default for mobile */
     gap: 5px; /* Space between options */
 }
 
-/* For Desktop: Align Answers in Rows */
+/* For desktop: Align answers in rows */
 @media screen and (min-width: 600px) {
     .quiz-container .options {
         display: grid;
@@ -175,7 +158,7 @@ a:hover {
     }
 }
 
-/* Style Each Label so Radio Buttons Line Up Neatly */
+/* Style each label so radio buttons line up neatly */
 .quiz-container label {
     display: flex;
     align-items: center;
@@ -184,7 +167,7 @@ a:hover {
     cursor: pointer;
 }
 
-/* Make Radio Buttons Slightly Larger */
+/* Make radio buttons slightly larger */
 .quiz-container input[type="radio"] {
     transform: scale(1.2); /* Makes radio buttons larger */
     margin-right: 5px;
@@ -210,26 +193,21 @@ a:hover {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     main {
-        margin-left: 0; /* Reset for smaller screens */
-        width: 100%;
+        width: 95%;
         padding: 30px;
     }
     
     nav {
-        width: 100%;
+        flex-direction: column;
+        align-items: center;
         height: auto;
-        flex-direction: row;
-        justify-content: center;
-        position: relative;
     }
-
+    
     nav button {
         width: auto;
     }
 
     header {
-        margin-left: 0;
-        width: 100%;
-        left: 0;
+        margin-top: 0;
     }
 }
